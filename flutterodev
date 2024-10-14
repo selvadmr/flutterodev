@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('Düğmeye basıldı!');
+          },
+          backgroundColor: Colors.blue,
+          child: Icon(Icons.add),
+        ),
+        backgroundColor: Colors.grey,
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          title: Text('flutter odev'),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              print('Üç çizgi butonuna tıklandı');
+            },
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                print('Artı butonuna tıklandı');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                print('İnsan figürü butonuna tıklandı');
+              },
+            ),
+          ],
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(color: Colors.blueGrey, width: 50, height: 80),
+                  Container(color: Colors.white, width: 50, height: 80),
+                  Container(color: Colors.red, width: 50, height: 80),
+                  Container(color: Colors.black, width: 50, height: 80),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(color: Colors.blueGrey, width: 50, height: 80),
+                  Container(color: Colors.white, width: 50, height: 80),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(color: Colors.blueGrey, width: 50, height: 80),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
